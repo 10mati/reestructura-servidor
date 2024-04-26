@@ -3,12 +3,12 @@ import handlebars from 'express-handlebars';
 import __dirname from './utils.js'
 import { Server } from "socket.io";
 import session from "express-session";
-import productRouter  from "./routes/file-routes/products.route.js";
-import cartRouter  from "./routes/file-routes/carts.route.js";
+import productRouter from "./controllers/file-routes/products.route.js"
+import cartRouter  from "./controllers/file-routes/carts.route.js";
 import viewRouter from "./routes/views.routes.js"
 import MongoStore from 'connect-mongo';
 import mongoose from "mongoose";
-import { messageModels } from "./model/mongo-models/messaje.js";
+import { messageModels } from "./models/mongo-models/messaje.js";
 import ProductRouter from "./routes/db-routes/products.route.js";
 import CartsRouter from "./routes/db-routes/carts.route.js";
 import userViewsRouter from "./routes/user.views.routes.js";
@@ -59,7 +59,6 @@ app.use("/fs/products", productRouter)
 app.use("/fs/carts", cartRouter)
 app.use("/", viewRouter)
 app.use("/realTimeProducts", viewRouter)
-//app.use("/api/products", ProductRouter)
 app.use("/api/carts", CartsRouter)
 app.use("/api/productos", ProductRouter)
 app.use("/carrito", CartsRouter)
