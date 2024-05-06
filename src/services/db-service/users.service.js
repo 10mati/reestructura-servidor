@@ -1,4 +1,4 @@
-import userModel from '../../model/mongo-models/user.model.js';
+import userModel from '../../models/mongo-models/user.model.js';
 
 export default class UserService {
     constructor(){

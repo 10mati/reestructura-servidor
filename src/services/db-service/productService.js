@@ -1,4 +1,4 @@
-import { productModels } from "../../model/mongo-models/products.js";
+import { productModels } from "../../models/mongo-models/products.js";
 
 class ProductsService {
     constructor() {

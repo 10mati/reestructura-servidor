@@ -1,5 +1,5 @@
 import { Router } from "express";
-import  CartsService from "../../service/db-service/cartService.js"
+import  CartsService from "../../services/db-service/cartService.js"
 
 const CartRouter = Router();
 const cartsService = new CartsService();

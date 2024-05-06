@@ -9,18 +9,19 @@ import viewRouter from "./routes/views.routes.js"
 import MongoStore from 'connect-mongo';
 import mongoose from "mongoose";
 import { messageModels } from "./models/mongo-models/messaje.js";
-import ProductRouter from "./routes/db-routes/products.route.js";
-import CartsRouter from "./routes/db-routes/carts.route.js";
+import ProductRouter from "./controllers/db-routes/products.route.js";
+import CartsRouter from "./controllers/db-routes/carts.route.js";
 import userViewsRouter from "./routes/user.views.routes.js";
-import sessionsRouter from "./routes/sessions.routes.js";
+import sessionsRouter from "./controllers/sessions.routes.js";
 import passport from 'passport';
 import initializePassport from "./config/passport.config.js";
-import githubLoginViewRouter from './routes/github-login.views.router.js';
+import githubLoginViewRouter from './controllers/github-login.views.router.js';
 import cookieParser from 'cookie-parser';
-import jwtRouter from './routes/jwt.routes.js';
-import usersRouter from './routes/user.routes.js';
+import jwtRouter from './controllers/jwt.routes.js';
+import usersRouter from './controllers/user.routes.js';
 import usersViewRouter from './routes/user.views.routes.js';
-import UsersExtendRouter from './routes/custom/users.extend.router.js';
+import UsersExtendRouter from './controllers/custom/users.extend.router.js';
+import config from './config/config.js';
 
 
 const app = express();
@@ -91,8 +92,10 @@ app.get('/session', (req, res) => {
   }
 });
 
-const httpServer = app.listen(PORT, () => {
-    console.log(`Servidor con express Puerto ${PORT}`);
+const SERVER_PORT = config.port;
+
+const httpServer = app.listen(SERVER_PORT, () => {
+    console.log(`Servidor con express Puerto ${SERVER_PORT}`);
 })
 
 const socketServer = new Server(httpServer);

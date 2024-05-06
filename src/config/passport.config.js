@@ -1,6 +1,6 @@
 import passport from 'passport'; 
 import passportLocal from 'passport-local';
-import userModel from '../model/mongo-models/user.model.js';
+import userModel from '../models/mongo-models/user.model.js';
 import { createHash, isValidPassword } from '../utils.js';
 import jwtStrategy from 'passport-jwt';
 import { PRIVATE_KEY } from '../utils.js';

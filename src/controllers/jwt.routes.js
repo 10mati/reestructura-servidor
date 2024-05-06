@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import userModel from '../model/mongo-models/user.model.js';
+import userModel from '../models/mongo-models/user.model.js';
 import { isValidPassword } from '../utils.js';
 import { generateJWToken } from '../utils.js';
 

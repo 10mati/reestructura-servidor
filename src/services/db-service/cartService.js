@@ -1,4 +1,4 @@
-import { cartModels } from "../../model/mongo-models/carts.js";
+import { cartModels } from "../../models/mongo-models/carts.js";
 
 
 class CartsService {

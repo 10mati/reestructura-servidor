@@ -1,5 +1,5 @@
 import CustomRouter from './custom.router.js';
-import UserService from '../../service/db-service/users.service.js';
+import UserService from '../../services/db-service/users.service.js';
 import { createHash, isValidPassword, generateJWToken } from '../../utils.js';
 
 export default class UsersExtendRouter extends CustomRouter {
